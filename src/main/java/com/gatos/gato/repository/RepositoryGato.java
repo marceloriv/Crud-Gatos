@@ -10,5 +10,6 @@ public interface RepositoryGato extends JpaRepository<GatoModel, Long> {
     // Aquí puedes agregar métodos personalizados si es necesario
     // Por ejemplo, puedes buscar gatos por nombre o raza
 
+    // Método para buscar un gato por su nombre
     GatoModel findByNombre(String nombre);
 }

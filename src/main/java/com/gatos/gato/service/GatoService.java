@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.gatos.gato.model.GatoModel;
 import com.gatos.gato.repository.RepositoryGato;
 
+// Anotación @Service indica que esta clase es un servicio de Spring
 @Service
 public class GatoService {
     // Aquí puedes agregar la lógica de negocio relacionada con los gatos
@@ -20,9 +21,17 @@ public class GatoService {
     // public GatoModel guardarGato(GatoModel gato) {
     //     return repositoryGato.save(gato);
     // }
+    // Anotación @Autowired para inyectar el repositorio de gatos
     @Autowired
     private RepositoryGato repositoryGato;
 
+    /* 
+     * Método para guardar un gato
+     * @param gato El objeto GatoModel que se va a guardar
+     * @return El objeto GatoModel guardado
+     * Este método crea un nuevo objeto GatoModel y lo guarda en la base de datos
+     * utilizando el repositorio de gatos
+     */
     public GatoModel guardarGato(GatoModel gato) {
 
         //Instanciar un nuevo objeto GatoModel
@@ -38,6 +47,7 @@ public class GatoService {
 
     }
 
+    // Método para buscar un gato por su nombre
     public GatoModel buscarPorNombre(String nombre) {
         return repositoryGato.findByNombre(nombre);
     }
